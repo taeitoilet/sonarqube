@@ -158,19 +158,7 @@
 			<version>2.52.0</version>
 		</dependency>
 	</dependencies>
-<!--	<profiles>-->
-<!--		<profile>-->
-<!--			<id>sonar</id>-->
-<!--			<activation>-->
-<!--				<activeByDefault>true</activeByDefault>-->
-<!--			</activation>-->
-<!--			<properties>-->
-<!--				<sonar.host.url>-->
-<!--					http://localhost:8081/-->
-<!--				</sonar.host.url>-->
-<!--			</properties>-->
-<!--		</profile>-->
-<!--	</profiles>-->
+
 	<build>
 		<plugins>
 			<plugin>
@@ -255,6 +243,20 @@
 <!--					<includeJUnit5Engines>true</includeJUnit5Engines>-->
 				</configuration>
 
+			</plugin>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.7</version> <!-- Dùng phiên bản mới nhất -->
+				<executions>
+					<execution>
+						<goals>
+							<goal>prepare-agent</goal>
+							<goal>report</goal>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
         </plugins>
 	</build>
